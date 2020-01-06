@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-navigation-drawer v-model="drawer" dark="" app class="blue accent-2">
+    <v-navigation-drawer v-model="drawer" dark="" app color="#492a78">
       <v-list>
         <v-list-item v-for="link in links" :key="link.text" router :to="link.route" active-class="border">
           <v-list-item-action>
@@ -20,10 +20,9 @@ export default {
   data: () => ({
     drawer: true,
     links: [
-      { icon: "fas fa-home", text: "Home", route: "/" },
-      { icon: "fas fa-chart-line", text: "Queues", route: "/queues" },
-      { icon: "fas fa-balance-scale-right", text: "Topics",route: "/topics"},
-      { icon: "fas fa-briefcase", text: "Webhooks", route: "/webhooks" }
+      { icon: "fas fa-chart-line", text: "Queues (2)", route: "./Queues/Queues" },
+      { icon: "fas fa-balance-scale-right", text: "Topics (0)",route: "/Topics/Topics"},
+      { icon: "fas fa-briefcase", text: "Webhooks (0)", route: "/" }
     ]
   })
 };

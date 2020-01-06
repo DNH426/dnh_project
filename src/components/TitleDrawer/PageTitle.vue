@@ -1,30 +1,69 @@
 <template>
-  <v-jumbotron color="grey lighten-4">
-    <v-container>
-      <v-col cols="12">
-        <v-row :align="center" :justify="justify">
-          <v-layout align-center>
-            <v-flex>
-              <h3 class="display-3">Eventhub Dashboard</h3>
-              <v-divider class="my-3"></v-divider>
-              <v-btn large color="primary" class="mx-0">Select Company</v-btn>
-            </v-flex>
-          </v-layout>
-        </v-row>
+  <v-container id="dropdown">
+    <v-row :align="center" :justify="justify">
+      <v-col justify="center" cols="4" sm="4">
+        <div class="text-center">
+          <h1 class="display-2">Eventhub Dashboard</h1>
+          <h4>Please select your Team and Application</h4>
+          <br/>
+          <v-menu offset-y>
+            <template v-slot:activator="{ on }">
+              <v-btn class="btn" color="#492a78" dark v-on="on">Integration Team</v-btn>
+            </template>
+            <v-list>
+              <v-list-item v-for="(item, index) in items" :key="index">
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </div>
+        <br />
+        <div class="text-center">
+          <v-menu offset-y>
+            <template v-slot:activator="{ on }">
+              <v-btn class="btn" color="#492a78" dark v-on="on">Sailpoint Integration Application</v-btn>
+            </template>
+            <v-list>
+              <v-list-item v-for="(item, index) in items" :key="index">
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </div>
       </v-col>
-      </v-container>
-  </v-jumbotron>
+    </v-row>
+          <v-divider class="my-3"></v-divider>
+  </v-container>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      alignment: "center",
-      justify: "center"
-    };
-  }
+  data: () => ({
+    items: [
+      { title: "Click Me" },
+      { title: "Click Me" },
+      { title: "Click Me" },
+      { title: "Click Me 2" }
+    ],
+    alignment: "center",
+    justify: "center"
+  })
 };
 </script>
 
-<style></style>
+<style>
+body {
+  background: #ffff;
+}
+#dropdown{
+  background: #ffff;
+}
+.my-3 {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.btn {
+  width: 100%;
+}
+</style>

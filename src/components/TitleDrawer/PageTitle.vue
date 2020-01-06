@@ -52,12 +52,6 @@ export default {
 </script>
 
 <style>
-body {
-  background: #ffff;
-}
-#dropdown{
-  background: #ffff;
-}
 .my-3 {
   margin-left: 10%;
   margin-right: 10%;
@@ -65,5 +59,6 @@ body {
 
 .btn {
   width: 100%;
+  min-width: 100%;
 }
 </style>

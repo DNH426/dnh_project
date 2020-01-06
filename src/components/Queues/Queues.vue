@@ -5,9 +5,6 @@
         <v-data-table
           :headers="headers"
           :items="queues"
-          :sort-by="['calories', 'fat']"
-          :sort-desc="[false, true]"
-          multi-sort
           hide-default-footer
           class="elevation-1"
         ></v-data-table>
@@ -54,7 +51,5 @@ export default {
 </script>
 
 <style>
-body {
-  background: #ffff;
-}
+
 </style>

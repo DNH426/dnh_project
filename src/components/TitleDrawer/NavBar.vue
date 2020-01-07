@@ -52,7 +52,7 @@
       color="rgb(73, 42, 120)"
       app
     >
-      <span class="white--text">&copy; 2019</span>
+      <span class="white--text">&copy; DNH 2020</span>
     </v-footer>
   </v-app>
 </template>

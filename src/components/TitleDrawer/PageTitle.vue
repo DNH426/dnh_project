@@ -5,7 +5,7 @@
         <div class="text-center">
           <v-menu offset-y>
             <template v-slot:activator="{ on }">
-              <v-select :items="['Foo', 'Bar', 'Fizz', 'Buzz']" label="Company">
+              <v-select :items="['FunFunFunComp', 'BarBarBarComp', 'FizzFizzFizzComp', 'BuzzBuzzBuzzComp']" label="Company">
                 <template v-slot:item="{ item, attrs, on }">
                   <v-list-item v-bind="attrs" v-on="on">
                     <v-list-item-title :id="attrs['aria-labelledby']" v-text="item"></v-list-item-title>
@@ -24,7 +24,26 @@
         <div class="text-center">
           <v-menu offset-y>
             <template v-slot:activator="{ on }">
-              <v-select :items="['Foo', 'Bar', 'Fizz', 'Buzz']" label="Application">
+              <v-select :items="['FooFooFooApp', 'BarBarBarAPp', 'FizzFizzFizzFizzApp', 'BuzzBuzzBuzzApp']" label="Application">
+                <template v-slot:item="{ item, attrs, on }">
+                  <v-list-item v-bind="attrs" v-on="on">
+                    <v-list-item-title :id="attrs['aria-labelledby']" v-text="item"></v-list-item-title>
+                  </v-list-item>
+                </template>
+              </v-select>
+            </template>
+            <v-list>
+              <v-list-item v-for="(item, index) in items" :key="index">
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </div>
+        <br/>
+          <div class="text-center">
+          <v-menu offset-y>
+            <template v-slot:activator="{ on }">
+              <v-select :items="['Dev', 'Test', 'Prod']" label="Environment">
                 <template v-slot:item="{ item, attrs, on }">
                   <v-list-item v-bind="attrs" v-on="on">
                     <v-list-item-title :id="attrs['aria-labelledby']" v-text="item"></v-list-item-title>
@@ -42,6 +61,7 @@
       </v-col>
     </v-row>
     <v-divider class="my-3"></v-divider>
+            
   </v-container>
 </template>
 

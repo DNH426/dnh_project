@@ -69,6 +69,6 @@ export default {
 
 <style>
 .space {
-  padding: 10px !important;
+  padding: 5px !important;
 }
 </style>

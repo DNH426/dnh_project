@@ -3,11 +3,15 @@
     <v-row :align="center" :justify="justify">
       <v-col justify="center" cols="4" sm="4">
         <div class="text-center">
-          <h4>Please select your Team and Application</h4>
-          <br/>
           <v-menu offset-y>
             <template v-slot:activator="{ on }">
-              <v-btn class="btn" color="indigo" dark v-on="on">Integration Team</v-btn>
+              <v-select :items="['Foo', 'Bar', 'Fizz', 'Buzz']" label="Company">
+                <template v-slot:item="{ item, attrs, on }">
+                  <v-list-item v-bind="attrs" v-on="on">
+                    <v-list-item-title :id="attrs['aria-labelledby']" v-text="item"></v-list-item-title>
+                  </v-list-item>
+                </template>
+              </v-select>
             </template>
             <v-list>
               <v-list-item v-for="(item, index) in items" :key="index">
@@ -20,7 +24,13 @@
         <div class="text-center">
           <v-menu offset-y>
             <template v-slot:activator="{ on }">
-              <v-btn class="btn" color="indigo" dark v-on="on">Sailpoint Integration Application</v-btn>
+              <v-select :items="['Foo', 'Bar', 'Fizz', 'Buzz']" label="Application">
+                <template v-slot:item="{ item, attrs, on }">
+                  <v-list-item v-bind="attrs" v-on="on">
+                    <v-list-item-title :id="attrs['aria-labelledby']" v-text="item"></v-list-item-title>
+                  </v-list-item>
+                </template>
+              </v-select>
             </template>
             <v-list>
               <v-list-item v-for="(item, index) in items" :key="index">
@@ -31,19 +41,13 @@
         </div>
       </v-col>
     </v-row>
-          <v-divider class="my-3"></v-divider>
+    <v-divider class="my-3"></v-divider>
   </v-container>
 </template>
 
 <script>
 export default {
   data: () => ({
-    items: [
-      { title: "Click Me" },
-      { title: "Click Me" },
-      { title: "Click Me" },
-      { title: "Click Me 2" }
-    ],
     alignment: "center",
     justify: "center"
   })
@@ -52,8 +56,8 @@ export default {
 
 <style>
 .my-3 {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 .btn {

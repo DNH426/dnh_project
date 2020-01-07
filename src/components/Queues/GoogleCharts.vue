@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div id="app">
-      <v-row>
+      <v-row class="space">
         <v-col cols="12" sm="6">
           <div class="my-2">
             <v-card>
@@ -19,9 +19,7 @@
           </div>
         </v-col>
       </v-row>
-    </div>
-    <div id="app">
-      <v-row>
+      <v-row class="space">
         <v-col cols="12" sm="6">
           <div class="my-2">
             <v-card>
@@ -55,7 +53,8 @@ export default {
         title: "Company Performance",
         subtitle: "Sales, Expenses, and Profit: 2014-2017"
       },
-      colors: ["#9032d9", "#492a78", "#7570b3"]
+      colors: ["#9032d9", "#492a78", "#7570b3"],
+      width: "880px"
     }
   }),
   name: "App",
@@ -69,4 +68,7 @@ export default {
 </script>
 
 <style>
+.space {
+  padding: 10px !important;
+}
 </style>

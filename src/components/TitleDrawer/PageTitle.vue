@@ -3,12 +3,11 @@
     <v-row :align="center" :justify="justify">
       <v-col justify="center" cols="4" sm="4">
         <div class="text-center">
-          <h1 class="display-2">Eventhub Dashboard</h1>
           <h4>Please select your Team and Application</h4>
           <br/>
           <v-menu offset-y>
             <template v-slot:activator="{ on }">
-              <v-btn class="btn" color="#492a78" dark v-on="on">Integration Team</v-btn>
+              <v-btn class="btn" color="indigo" dark v-on="on">Integration Team</v-btn>
             </template>
             <v-list>
               <v-list-item v-for="(item, index) in items" :key="index">
@@ -21,7 +20,7 @@
         <div class="text-center">
           <v-menu offset-y>
             <template v-slot:activator="{ on }">
-              <v-btn class="btn" color="#492a78" dark v-on="on">Sailpoint Integration Application</v-btn>
+              <v-btn class="btn" color="indigo" dark v-on="on">Sailpoint Integration Application</v-btn>
             </template>
             <v-list>
               <v-list-item v-for="(item, index) in items" :key="index">
@@ -60,5 +59,9 @@ export default {
 .btn {
   width: 100%;
   min-width: 100%;
+}
+
+h4 {
+  color: gray;
 }
 </style>
